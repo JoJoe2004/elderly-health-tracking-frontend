@@ -1,5 +1,10 @@
+import { Suspense } from "react";
 import HealthAdd from "@/components/health/HealthAdd";
 
 export default function Page() {
-  return <HealthAdd />;
+  return (
+    <Suspense fallback={<div>กำลังโหลด...</div>}>
+      <HealthAdd />
+    </Suspense>
+  );
 }

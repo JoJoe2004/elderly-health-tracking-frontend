@@ -1,9 +1,10 @@
+import { Suspense } from "react";
 import MedicineTable from "@/components/medication/MedicineTable";
 
 export default function MedicationPage() {
   return (
-    <div>
+    <Suspense fallback={<div>กำลังโหลด...</div>}>
       <MedicineTable />
-    </div>
+    </Suspense>
   );
 }
