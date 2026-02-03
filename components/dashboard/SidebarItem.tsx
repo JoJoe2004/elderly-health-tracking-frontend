@@ -7,12 +7,17 @@ export type SidebarItemProps = {
   active?: boolean;
 };
 
-export default function SidebarItem({ icon, label, href,active }: SidebarItemProps) {
+export default function SidebarItem({ icon, label, href, active }: SidebarItemProps) {
   return (
     <Link
       href={href}
-      className={`flex items-center gap-3 px-4 py-3 rounded-md cursor-pointer
-      ${active ? "bg-[#93DA97] text-black" : "text-white hover:bg-emerald-600"}`}
+      className={`
+        flex items-center gap-3 px-4 py-3 w-full  cursor-pointer
+        transition-all duration-200 ease-in-out
+        ${active
+          ? "bg-[#93DA97] text-black"
+          : "text-white hover:bg-emerald-600 hover:text-white"}
+      `}
     >
       {icon}
       <span>{label}</span>

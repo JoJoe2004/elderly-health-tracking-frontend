@@ -119,7 +119,7 @@ export default function Sidebar() {
         </div>
 
         {/* Menu */}
-        <nav className="flex-1 px-2 py-4 space-y-1">
+        <nav className="flex-1 py-4 space-y-1">
           <SidebarItem icon={<LayoutDashboard size={18} />} label="แดชบอร์ด" href="/dashboard" active={pathname === "/dashboard"} />
           <SidebarItem icon={<Users size={18} />} label="รายชื่อผู้สูงอายุ" href="/dashboard/elderly" active={pathname.startsWith("/dashboard/elderly")} />
           <SidebarItem icon={<MessageCircle size={18} />} label="ผูกบัญชี Line" href="/dashboard/line" active={pathname.startsWith("/dashboard/line")} />
@@ -129,13 +129,13 @@ export default function Sidebar() {
         </nav>
 
         {/* Logout */}
-        <div className="p-4 border-t border-gray-400">
+        <div className="border-t border-gray-400">
           <button
             onClick={handleLogout}
-            className="flex items-center gap-3 px-4 py-4 text-emerald-100 hover:bg-emerald-600 rounded-lg w-full"
+            className="flex items-center gap-3 px-4 py-6 cursor-pointer text-white hover:bg-emerald-600 w-full"
           >
             <LogOut size={18} />
-            <span className="text-sm">ออกจากระบบ</span>
+            <span className="text-base">ออกจากระบบ</span>
           </button>
         </div>
       </aside>
