@@ -191,11 +191,12 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
 
   /* ---------- UI ---------- */
   return (
-    <div className="space-y-6">
-      <div className="bg-white p-6 rounded-xl shadow space-y-6 text-black">
+    <div className="space-y-6 mx-auto">
+      <div className="bg-white p-6 rounded-xl shadow space-y-6 text-black overflow-x-auto">
         {/* ข้อมูลหลักยา */}
-        <div className="grid grid-cols-[160px_400px_270px_270px] gap-4">
-          <label className="row-span-2 border-2 border-dashed rounded-lg flex flex-col items-center justify-center text-xs text-gray-500 cursor-pointer hover:border-[#0D7C66] overflow-hidden relative">
+        <div className="grid grid-cols-[160px_minmax(160px,1.5fr)_1fr_1fr] gap-4">
+          <label className="row-span-2 border-2 border-dashed rounded-lg flex flex-col items-center justify-center text-xs text-gray-500
+              cursor-pointer transition-all duration-200 hover:border-[#0D7C66] hover:bg-emerald-50 overflow-hidden relative">
             {medicine.imagePreview ? (
               <Image
                 src={medicine.imagePreview}
@@ -223,7 +224,7 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
           <div>
             <label>ชื่อยา</label>
             <input
-              className="input w-full"
+              className="input w-full min-w-0"
               value={medicine.name}
               onChange={(e) => setMedicine({ ...medicine, name: e.target.value })}
             />
@@ -261,7 +262,7 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
 
         {/* ตารางเวลา */}
         {medicine.schedules.map((row, sIndex) => (
-          <div key={sIndex} className="grid grid-cols-[200px_200px_200px_200px_auto] gap-6 items-end">
+          <div key={sIndex} className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-4 items-end">
             <input
               type="number"
               className="input text-center"

@@ -152,12 +152,12 @@ export default function MedicineForm({ elderlyId }: MedicineFormProps) {
   };
 
   return (
-    <div className="space-y-6 mx-auto overflow-x-auto">
+    <div className="space-y-6 mx-auto">
       {medicines.map((med, mIndex) => (
-        <div key={mIndex} className="bg-white p-6 rounded-xl shadow space-y-6 text-black min-w-300">
+        <div key={mIndex} className="bg-white p-6 rounded-xl shadow space-y-6 text-black overflow-x-auto">
 
           {/* ข้อมูลหลักยา */}
-          <div className="grid grid-cols-[160px_400px_270px_270px] gap-4">
+          <div className="grid grid-cols-[160px_minmax(160px,1.5fr)_1fr_1fr] gap-4">
             <label className="row-span-2 border-2 border-dashed rounded-lg flex flex-col items-center justify-center text-xs text-gray-500
               cursor-pointer transition-all duration-200 hover:border-[#0D7C66] hover:bg-emerald-50 overflow-hidden relative">
               {med.imagePreview ? (
@@ -184,7 +184,7 @@ export default function MedicineForm({ elderlyId }: MedicineFormProps) {
             <div>
               <label>ชื่อยา</label>
               <input
-                className="input w-full"
+                className="input w-full min-w-0"
                 value={med.name}
                 onChange={(e) => updateMedicine(mIndex, "name", e.target.value)}
               />
@@ -222,7 +222,7 @@ export default function MedicineForm({ elderlyId }: MedicineFormProps) {
 
           {/* ตารางเวลา */}
           {med.schedules.map((row, sIndex) => (
-            <div key={sIndex} className="grid grid-cols-[200px_200px_200px_200px_auto] gap-4 items-end">
+            <div key={sIndex} className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-4 items-end">
               <div>
                 <label>ปริมาณ</label>
                 <input
