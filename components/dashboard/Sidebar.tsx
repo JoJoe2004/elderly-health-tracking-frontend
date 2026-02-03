@@ -135,7 +135,7 @@ export default function Sidebar() {
             className="flex items-center gap-3 px-4 py-6 cursor-pointer text-white hover:bg-emerald-600 w-full"
           >
             <LogOut size={18} />
-            <span className="text-base">ออกจากระบบ</span>
+            <span className="text-sm">ออกจากระบบ</span>
           </button>
         </div>
       </aside>
