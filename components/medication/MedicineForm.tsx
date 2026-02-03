@@ -155,7 +155,6 @@ export default function MedicineForm({ elderlyId }: MedicineFormProps) {
     <div className="space-y-6 mx-auto">
       {medicines.map((med, mIndex) => (
         <div key={mIndex} className="bg-white p-6 rounded-xl shadow space-y-6 text-black overflow-x-auto">
-
           {/* ข้อมูลหลักยา */}
           <div className="grid grid-cols-[160px_minmax(160px,1.5fr)_1fr_1fr] gap-4">
             <label className="row-span-2 border-2 border-dashed rounded-lg flex flex-col items-center justify-center text-xs text-gray-500
