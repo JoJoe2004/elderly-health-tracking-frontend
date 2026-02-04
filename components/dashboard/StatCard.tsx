@@ -8,10 +8,10 @@ type StatCardProps = {
 export default function StatCard({ value, unit, iconSrc }: StatCardProps) {
   return (
     <div className="
-     bg-white rounded-xl px-6 py-4
+     bg-white rounded-xl px-6 py-3
         grid grid-cols-[auto_1fr_auto]
         items-center
-        w-full h-24
+        w-full
     ">  
       <div className="w-20 h-20 flex items-center justify-center rounded-xl">
         <Image
