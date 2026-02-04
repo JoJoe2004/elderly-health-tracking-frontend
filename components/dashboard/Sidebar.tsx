@@ -176,7 +176,9 @@ export default function Sidebar() {
 
           // ✅ update state จาก backend
           setUsername(data.username ?? "");
-          setAvatar(data.avatarUrl ?? null);
+          if (data.avatarUrl) {
+            setAvatar(data.avatarUrl);
+          }
 
           // ✅ sync localStorage
           localStorage.setItem("username", data.username ?? "");
