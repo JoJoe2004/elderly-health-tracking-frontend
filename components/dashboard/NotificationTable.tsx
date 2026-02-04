@@ -89,10 +89,10 @@ export default function NotificationTable() {
         <table className="w-full border-collapse table-fixed">
           <thead>
             <tr className="bg-[#0D7C66] text-white">
-              <th className="py-2 px-4 text-center">ผู้สูงอายุ</th>
-              <th className="py-2 px-4 text-center">ยา</th>
-              <th className="py-2 px-4 text-center">เวลา</th>
-              <th className="py-2 px-4 text-center">สถานะ</th>
+              <th className="w-1/4 py-2 px-4 text-center">ผู้สูงอายุ</th>
+              <th className="w-1/4 py-2 px-4 text-center">ยา</th>
+              <th className="w-1/6 py-2 px-4 text-center">เวลา</th>
+              <th className="w-1/6 py-2 px-4 text-center">สถานะ</th>
             </tr>
           </thead>
 
