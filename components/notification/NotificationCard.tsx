@@ -64,14 +64,14 @@ const imageSrc = data.image || "/icons/no-medicine.png";
           />
         </div>
 
-        <div className="text-base space-y-2 text-black font-semibold">
-          <p className="text-lg">{data.medicine_name}</p>
+        <div className="text-base space-y-2 text-black">
+          <p className="text-lg  font-semibold">{data.medicine_name}</p>
           <p>
             ปริมาณยาที่ใช : {data.dose} {doseTypeMap[data.dose_type]}
           </p>
           <p>วิธีทานยา : {methodMap[data.method]}</p>
           <p>ระยะเวลาการใช้ยา : {calcDuration(data.start_date, data.end_date)}</p>
-          <p className="text-2xl">{data.time.slice(0,5)} น.</p>
+          <p className="text-2xl  font-semibold">{data.time.slice(0,5)} น.</p>
         </div>
       </div>
 

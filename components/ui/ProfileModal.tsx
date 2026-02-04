@@ -24,13 +24,11 @@ export default function ProfileModal({
 }: ProfileModalProps) {
   const [name, setName] = useState(username || ""); 
   const [file, setFile] = useState<File | null>(null);
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   const [preview, setPreview] = useState<string | null>(() => {
-    if (!avatar) return null;
-    if (avatar.startsWith("blob:") || avatar.startsWith("data:")) return avatar;
-    return `${API_URL}${avatar}`;
+    return avatar || null;
   });
+
 
   const handleImageChange = (file?: File) => {
     if (!file) return;
