@@ -129,7 +129,7 @@ export default function ElderlyTable() {
       <div className="flex justify-end mt-4">
         <Link href="/dashboard/elderly/add"> 
           <button className="bg-[#0D7C66] text-white px-4 py-2 rounded-md flex items-center gap-2
-                            hover:bg-emerald-800 transition-colors duration-200"
+                            hover:bg-emerald-800 transition-colors duration-200 "
           >
             + เพิ่มผู้สูงอายุ
           </button>
