@@ -120,13 +120,13 @@ export default function MedicineTable() {
           <table className="w-full text-sm table-fixed">
             <thead className="bg-[#0D7C66] text-white">
               <tr>
-                <th className="w-75 py-2 text-center">ชื่อยา</th>
+                <th className="w-60 py-2 text-center">ชื่อยา</th>
                 <th className="w-24 py-2 text-center">ขนาดยา</th>
                 <th className="w-24 py-2 text-center">เวลา</th>
                 <th className="w-24 py-2 text-center">วิธีใช้</th>
                 <th className="w-40 py-2 text-center">ผลข้างเคียง</th>
-                <th className="w-20 py-2 text-center">แก้ไข</th>
-                <th className="w-20 py-2 text-center">ลบ</th>
+                <th className="w-16 py-2 text-center">แก้ไข</th>
+                <th className="w-16 py-2 text-center">ลบ</th>
               </tr>
             </thead>
             <tbody>
@@ -139,19 +139,19 @@ export default function MedicineTable() {
               ) : (
                 medicineList.map((m, i) => (
                   <tr key={m.time_id} className={i % 2 === 0 ? "bg-white" : "bg-[#DEF4DF]"}>
-                    <td className="w-75 py-2 text-center">{m.medicine_name}</td>
+                    <td className="w-60 py-2 text-center">{m.medicine_name}</td>
                     <td className="w-24 py-2 text-center">{m.dose} {doseTypeMap[m.dose_type]}</td>
                     <td className="w-24 py-2 text-center">{m.time.slice(0,5)}</td>
                     <td className="w-24 py-2 text-center">{methodText(m.method)}</td>
                     <td className="w-40 py-2 text-center">{m.side_effect || "-"}</td>
                     <td><Pencil 
-                          className="w-20 mx-auto text-emerald-600 cursor-pointer hover:scale-110" 
+                          className="w-16 mx-auto text-emerald-600 cursor-pointer hover:scale-110" 
                           size={16} 
                           onClick={() => router.push(`/dashboard/medication/edit/${m.medicine_id}`)}
                         />
                     </td>
                     <td><Trash2 
-                      className="w-20 mx-auto text-red-500 cursor-pointer hover:scale-110" 
+                      className="w-16 mx-auto text-red-500 cursor-pointer hover:scale-110" 
                       size={16} 
                       onClick={() =>  setDeleteTimeId(m.time_id)}  
                       />
