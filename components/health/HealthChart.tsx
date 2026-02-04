@@ -16,6 +16,7 @@ type Props = {
 
 type HealthGraphRow = {
   record_date: string;
+  created_at: string;
   weight: number | null;
   systolic: number | null;
   diastolic: number | null;
@@ -85,7 +86,7 @@ export default function HealthChart({
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data}>
               <XAxis
-                dataKey="record_date"
+                dataKey="created_at"
                 tickFormatter={(v) =>
                   new Date(v).toLocaleDateString("th-TH", {
                     day: "2-digit",
