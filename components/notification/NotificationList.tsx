@@ -26,7 +26,7 @@ export default function NotificationList({ reminders, onToggle }: Props) {
   }
 
   return (
-    <div className="grid grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
       {reminders.map((r) => (
         <NotificationCard key={r.id} data={r} onToggle={onToggle} />
       ))}
