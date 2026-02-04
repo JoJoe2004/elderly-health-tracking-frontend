@@ -8,9 +8,10 @@ type StatCardProps = {
 export default function StatCard({ value, unit, iconSrc }: StatCardProps) {
   return (
     <div className="
-    bg-white rounded-xl px-6 py-4
-      flex items-center justify-between
-      w-full h-24
+     bg-white rounded-xl px-6 py-4
+        grid grid-cols-[auto_1fr_auto]
+        items-center
+        w-full h-24
     ">  
       <div className="w-20 h-20 flex items-center justify-center rounded-xl">
         <Image
@@ -23,15 +24,16 @@ export default function StatCard({ value, unit, iconSrc }: StatCardProps) {
       </div>
 
       {/* Value + Unit */}
-      <div className="flex items-baseline gap-2">
-        <span className="text-2xl font-semibold text-gray-800 text-center min-w-8">
+      <div className="text-center">
+        <span className="text-2xl font-semibold text-gray-800">
           {value}
-        </span>
-        <span className="text-lg font-semibold text-gray-800 w-16 ">
-          {unit}
         </span>
       </div>
 
+        <div className="text-lg font-semibold text-gray-800 w-16 ">
+          {unit}
+        </div>
+      
     </div>
   );
 }
