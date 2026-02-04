@@ -49,9 +49,7 @@ export default function NotificationCard({ data, onToggle }: Props) {
 
   return `${diffDays} วัน`;
 };
-const imageSrc = data.image
-  ? `${process.env.NEXT_PUBLIC_API_URL}${data.image}`
-  : "/icons/no-medicine.png"; // รูป default
+const imageSrc = data.image || "/icons/no-medicine.png";
 
   return (
     <div className="bg-white rounded-xl p-4 shadow flex justify-between relative">

@@ -166,7 +166,6 @@ export default function MedicineForm({ elderlyId }: MedicineFormProps) {
                   <span className="text-lg">⬆</span>
                   <span>เพิ่มรูปภาพ</span>
                   <span className="mt-1">สูงสุด 5 MB</span>
-                  <span>jpg, png</span>
                 </>
               )}
               <input
