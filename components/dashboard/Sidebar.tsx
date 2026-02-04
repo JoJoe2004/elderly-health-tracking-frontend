@@ -16,7 +16,7 @@ import {
   User,
 } from "lucide-react";
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -89,7 +89,15 @@ export default function Sidebar() {
 
   return (
     <>
-      <aside className="w-64 bg-[#0D7C66] text-white flex flex-col">
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-3 text-white lg:hidden"
+        >
+          ✕
+        </button>
+      )}
+      <aside className="w-64 bg-[#0D7C66] text-white flex flex-col relative">
         {/* Profile */}
         <div
           onClick={() => setOpenProfile(true)}
@@ -120,12 +128,47 @@ export default function Sidebar() {
 
         {/* Menu */}
         <nav className="flex-1 py-4 space-y-1">
-          <SidebarItem icon={<LayoutDashboard size={18} />} label="แดชบอร์ด" href="/dashboard" active={pathname === "/dashboard"} />
-          <SidebarItem icon={<Users size={18} />} label="รายชื่อผู้สูงอายุ" href="/dashboard/elderly" active={pathname.startsWith("/dashboard/elderly")} />
-          <SidebarItem icon={<MessageCircle size={18} />} label="ผูกบัญชี Line" href="/dashboard/line" active={pathname.startsWith("/dashboard/line")} />
-          <SidebarItem icon={<ClipboardList size={18} />} label="บันทึกสุขภาพ" href="/dashboard/health" active={pathname.startsWith("/dashboard/health")} />
-          <SidebarItem icon={<Pill size={18} />} label="จัดการตารางยา" href="/dashboard/medication" active={pathname.startsWith("/dashboard/medication")} />
-          <SidebarItem icon={<Bell size={18} />} label="ตั้งค่าแจ้งเตือน" href="/dashboard/notification" active={pathname.startsWith("/dashboard/notification")} />
+          <SidebarItem 
+            icon={<LayoutDashboard size={18} />} 
+            label="แดชบอร์ด" href="/dashboard" 
+            active={pathname === "/dashboard"} 
+            onClick={onClose} 
+          />
+
+          <SidebarItem 
+          icon={<Users size={18} />} 
+          label="รายชื่อผู้สูงอายุ" href="/dashboard/elderly" 
+          active={pathname.startsWith("/dashboard/elderly")}
+          onClick={onClose} 
+          />
+
+          <SidebarItem 
+          icon={<MessageCircle size={18} />} 
+          label="ผูกบัญชี Line" href="/dashboard/line" 
+          active={pathname.startsWith("/dashboard/line")}
+          onClick={onClose} 
+          />
+
+          <SidebarItem 
+          icon={<ClipboardList size={18} />} 
+          label="บันทึกสุขภาพ" href="/dashboard/health" 
+          active={pathname.startsWith("/dashboard/health")} 
+          onClick={onClose} 
+          />
+
+          <SidebarItem 
+          icon={<Pill size={18} />} 
+          label="จัดการตารางยา" href="/dashboard/medication" 
+          active={pathname.startsWith("/dashboard/medication")} 
+          onClick={onClose} 
+          />
+
+          <SidebarItem 
+          icon={<Bell size={18} />} 
+          label="ตั้งค่าแจ้งเตือน" href="/dashboard/notification" 
+          active={pathname.startsWith("/dashboard/notification")} 
+          onClick={onClose} 
+          />
         </nav>
 
         {/* Logout */}

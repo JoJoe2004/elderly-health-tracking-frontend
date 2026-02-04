@@ -5,12 +5,14 @@ export type SidebarItemProps = {
   label: string;
   href: string;
   active?: boolean;
+  onClick?: () => void; 
 };
 
-export default function SidebarItem({ icon, label, href, active }: SidebarItemProps) {
+export default function SidebarItem({ icon, label, href, active, onClick, }: SidebarItemProps) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={`
         flex items-center gap-3 px-4 py-3 w-full  cursor-pointer
         transition-all duration-200 ease-in-out text-sm

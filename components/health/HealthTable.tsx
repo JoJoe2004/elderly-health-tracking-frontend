@@ -104,7 +104,7 @@ export default function HealthTable() {
                 <th className="w-20 py-2 text-center">น้ำหนัก</th>
                 <th className="w-20 py-2 text-center">ชีพจร</th>
                 <th className="w-28 py-2 text-center">ความดัน</th>
-                <th className="w-20 py-2 text-center">ดู</th>
+                <th className="w-16 py-2 text-center">ดู</th>
               </tr>
             </thead>
             <tbody>
@@ -125,7 +125,7 @@ export default function HealthTable() {
                     <td className="py-2 text-center">{h.blood_pressure}</td>
                     <td>
                       <Eye
-                        className="w-20 mx-auto text-emerald-600 cursor-pointer hover:scale-110"
+                        className="w-16 mx-auto text-emerald-600 cursor-pointer hover:scale-110"
                         size={16}
                         onClick={() => router.push(`/dashboard/health/view/${h.id}`)}
                       />
