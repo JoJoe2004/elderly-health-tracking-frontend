@@ -65,7 +65,10 @@ const handleSubmit = async () => {
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ userId, otp: otpValue }),
+        body: JSON.stringify({
+          userId: Number(userId),
+          otp: otpValue
+        }),
       }
     );
 
@@ -105,6 +108,13 @@ const handleResendOTP = async () => {
 
     const data = await res.json();
 
+    if (data.userId) {
+      localStorage.setItem("recoveryUserId", data.userId.toString());
+    }
+
+    setOtp(Array(length).fill(""));
+    inputsRef.current[0]?.focus();
+    
     if (!res.ok) {
       setFormMessage(data.message || "ไม่สามารถส่ง OTP ใหม่ได้");
       return;
