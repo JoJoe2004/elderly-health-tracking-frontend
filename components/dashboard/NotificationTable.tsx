@@ -86,7 +86,7 @@ export default function NotificationTable() {
 
       <div className="bg-white rounded-lg overflow-hidden">
         <div className="max-h-80 overflow-y-auto">
-        <table className="w-full border-collapse">
+        <table className="w-full border-collapse table-fixed">
           <thead>
             <tr className="bg-[#0D7C66] text-white">
               <th className="py-2 px-4 text-center">ผู้สูงอายุ</th>
