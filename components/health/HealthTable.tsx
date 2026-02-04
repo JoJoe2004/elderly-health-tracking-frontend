@@ -95,7 +95,7 @@ export default function HealthTable() {
         </div>
 
         <div className="overflow-x-auto rounded-lg">
-          <table className="w-full text-sm table-fixed">
+          <table className="w-full min-w-max text-sm table-fixed">
             <thead className="bg-[#0D7C66] text-white">
               <tr>
                 <th className="w-32 py-2 text-center">วันที่</th>
