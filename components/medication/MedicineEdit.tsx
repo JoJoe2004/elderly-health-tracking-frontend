@@ -256,7 +256,7 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
 
         {/* ตารางเวลา */}
         {medicine.schedules.map((row, sIndex) => (
-          <div key={sIndex} className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-4 items-end">
+          <div key={sIndex} className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_80px] gap-4 items-end">
             <input
               type="number"
               className="input text-center"

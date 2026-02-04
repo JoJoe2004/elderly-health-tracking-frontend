@@ -128,7 +128,7 @@ export default function HealthAdd() {
             <input className="input w-full"
               type="text"
               pattern="\d{2,3}/\d{2,3}"
-              placeholder="120/80"
+              placeholder="mmHg(เช่น 120/80)"
               value={form.blood_pressure}
               onChange={e => setForm({ ...form, blood_pressure: e.target.value })}
             />
