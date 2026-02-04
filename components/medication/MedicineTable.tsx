@@ -116,7 +116,7 @@ export default function MedicineTable() {
           <h3 className="font-semibold">ยาที่ใช้ปัจจุบัน</h3>
         </div>
 
-        <div className="overflow-hidden rounded-lg">
+        <div className="overflow-x-auto rounded-lg">
           <table className="w-full text-sm table-fixed">
             <thead className="bg-[#0D7C66] text-white">
               <tr>
