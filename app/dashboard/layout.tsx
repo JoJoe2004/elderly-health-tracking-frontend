@@ -37,7 +37,7 @@ export default function DashboardLayout({
               onClick={() => setSidebarOpen(false)}
             />
             <div className="relative z-50 w-64 h-full">
-              <Sidebar onClose={() => setSidebarOpen(false)} />
+              <Sidebar onCloseAction={() => setSidebarOpen(false)} />
             </div>
           </div>
         )}

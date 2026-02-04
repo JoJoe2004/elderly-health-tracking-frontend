@@ -16,7 +16,7 @@ import {
   User,
 } from "lucide-react";
 
-export default function Sidebar({ onClose }: { onClose?: () => void }) {
+export default function Sidebar({ onCloseAction }: { onCloseAction?: () => void }) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -89,15 +89,15 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
 
   return (
     <>
-      {onClose && (
+      {onCloseAction && (
         <button
-          onClick={onClose}
+          onClick={onCloseAction}
           className="absolute top-3 right-3 text-white lg:hidden"
         >
           ✕
         </button>
       )}
-      <aside className="w-64 bg-[#0D7C66] text-white flex flex-col relative">
+      <aside className="w-64 h-full bg-[#0D7C66] text-white flex flex-col relative">
         {/* Profile */}
         <div
           onClick={() => setOpenProfile(true)}
@@ -132,42 +132,42 @@ export default function Sidebar({ onClose }: { onClose?: () => void }) {
             icon={<LayoutDashboard size={18} />} 
             label="แดชบอร์ด" href="/dashboard" 
             active={pathname === "/dashboard"} 
-            onClick={onClose} 
+            onClick={onCloseAction} 
           />
 
           <SidebarItem 
           icon={<Users size={18} />} 
           label="รายชื่อผู้สูงอายุ" href="/dashboard/elderly" 
           active={pathname.startsWith("/dashboard/elderly")}
-          onClick={onClose} 
+          onClick={onCloseAction} 
           />
 
           <SidebarItem 
           icon={<MessageCircle size={18} />} 
           label="ผูกบัญชี Line" href="/dashboard/line" 
           active={pathname.startsWith("/dashboard/line")}
-          onClick={onClose} 
+          onClick={onCloseAction} 
           />
 
           <SidebarItem 
           icon={<ClipboardList size={18} />} 
           label="บันทึกสุขภาพ" href="/dashboard/health" 
           active={pathname.startsWith("/dashboard/health")} 
-          onClick={onClose} 
+          onClick={onCloseAction} 
           />
 
           <SidebarItem 
           icon={<Pill size={18} />} 
           label="จัดการตารางยา" href="/dashboard/medication" 
           active={pathname.startsWith("/dashboard/medication")} 
-          onClick={onClose} 
+          onClick={onCloseAction} 
           />
 
           <SidebarItem 
           icon={<Bell size={18} />} 
           label="ตั้งค่าแจ้งเตือน" href="/dashboard/notification" 
           active={pathname.startsWith("/dashboard/notification")} 
-          onClick={onClose} 
+          onClick={onCloseAction} 
           />
         </nav>
 
