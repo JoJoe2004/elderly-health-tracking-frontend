@@ -7,7 +7,13 @@ type StatCardProps = {
 
 export default function StatCard({ value, unit, iconSrc }: StatCardProps) {
   return (
-    <div className="flex items-center bg-white rounded-xl px-3 py-2 gap-16">
+    <div className="
+          flex items-center
+          bg-white rounded-xl
+          px-4 py-3
+          gap-4
+          w-full
+          max-w-sm">
       <div className="w-20 h-20 flex items-center justify-center rounded-xl">
         <Image
           src={iconSrc}

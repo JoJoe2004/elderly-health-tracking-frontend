@@ -62,7 +62,12 @@ export default function DashboardPage() {
 
   return (
     <div className="space-y-2">
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="
+          grid
+          grid-cols-1
+          sm:grid-cols-2
+          gap-6
+          max-w-3xl">
         <div>
           <h3 className="font-semibold text-black mb-1">
             จำนวนผู้สูงอายุในความดูแล
