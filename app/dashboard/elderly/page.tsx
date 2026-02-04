@@ -17,7 +17,7 @@ export default function ElderlyPage() {
     }, []);
 return (
     <div className="space-y-4">
-      <div className="flex">
+   
         <div>
           <h3 className="font-semibold mb-1 text-black">
             จำนวนผู้สูงอายุในความดูแล
@@ -27,8 +27,7 @@ return (
             unit="คน"
             iconSrc="/icons/icon_elderly.png"
           />
-        </div>
-      </div>
+        </div>       
 
       {/* Table */}
       <ElderlyTable />
