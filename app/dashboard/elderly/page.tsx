@@ -17,17 +17,16 @@ export default function ElderlyPage() {
     }, []);
 return (
     <div className="space-y-4">
-   
-        <div>
-          <h3 className="font-semibold mb-1 text-black">
-            จำนวนผู้สูงอายุในความดูแล
-          </h3>
+      <div className="w-96">
+        <h3 className="font-semibold mb-1 text-black">
+          จำนวนผู้สูงอายุในความดูแล
+        </h3>
           <StatCard
             value={elderlyCount}
             unit="คน"
             iconSrc="/icons/icon_elderly.png"
           />
-        </div>       
+      </div>       
 
       {/* Table */}
       <ElderlyTable />
