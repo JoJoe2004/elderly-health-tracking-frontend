@@ -23,8 +23,8 @@ export default function StatCard({ value, unit, iconSrc }: StatCardProps) {
       </div>
 
       {/* Value + Unit */}
-      <div className="flex items-baseline gap-16">
-        <span className="text-2xl font-semibold text-gray-800">
+      <div className="flex items-baseline gap-2">
+        <span className="text-2xl font-semibold text-gray-800 text-center min-w-8">
           {value}
         </span>
         <span className="text-lg font-semibold text-gray-800 w-16 ">
