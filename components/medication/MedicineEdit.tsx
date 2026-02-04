@@ -83,9 +83,7 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
         endDate: toDateInput(data.end_date),
         sideEffect: data.side_effect,
         image: null,
-        imagePreview: data.image
-          ? `${process.env.NEXT_PUBLIC_API_URL}${data.image.startsWith("/") ? "" : "/"}${data.image}`
-          : "",
+        imagePreview: data.image || "",
         schedules: data.times.map((t) => ({
           id: t.id,
           dose: t.dose,
@@ -114,7 +112,6 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
       setTimeout(() => setErrorMsg(null), 4000);
       return;
     }
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL;
 
     const payload = {
       medicine_name: medicine.name,
@@ -122,9 +119,7 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
       end_date: medicine.endDate,
       side_effect: medicine.sideEffect,
       times: medicine.schedules,
-      image: medicine.imagePreview
-        ? medicine.imagePreview.replace(baseUrl!, "")
-        : null, 
+      image: medicine.imagePreview || null, 
     };
 
 
@@ -146,7 +141,6 @@ export default function MedicineEdit({ medicineId, elderlyId }: MedicineEditProp
       alert("บันทึกไม่สำเร็จ");
     }
   };
-
 
   /* ---------- Schedule ---------- */
   const addSchedule = () => {
