@@ -209,18 +209,32 @@ const handleSubmit = async () => {
     <div className="flex flex-col w-50">
       <label className="text-sm mb-1">เบอร์ติดต่อ</label>
       <input 
-        className="input" 
+        type="tel"
+        inputMode="numeric"
+        maxLength={10}
+        pattern="[0-9]*"
+        className="input"
         value={form.phone}
-        onChange={(e) => setForm({ ...form, phone: e.target.value })}
+        onChange={(e) => {
+          const onlyNumber = e.target.value.replace(/\D/g, "");
+          setForm({ ...form, phone: onlyNumber });
+        }}
       />
     </div>
 
     <div className="flex flex-col w-50">
       <label className="text-sm mb-1">เบอร์ติดต่อฉุกเฉิน</label>
       <input 
-        className="input" 
+        type="tel"
+        inputMode="numeric"
+        maxLength={10}
+        pattern="[0-9]*"
+        className="input"
         value={form.emergencyPhone}
-        onChange={(e) => setForm({ ...form, emergencyPhone: e.target.value })}
+        onChange={(e) => {
+          const onlyNumber = e.target.value.replace(/\D/g, "");
+          setForm({ ...form, emergencyPhone: onlyNumber });
+        }}
       />
     </div>
   </div>
