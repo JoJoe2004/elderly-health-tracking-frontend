@@ -18,12 +18,18 @@ export default function RegisterForm() {
 const isValidPassword = (password: string): boolean => {
   return /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password);
 };
+const isValidEmail = (email: string): boolean => {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
 
 const handleRegister = async () => {
   let hasError = false;
 
   if (!email) {
     setEmailError("กรุณากรอกอีเมล");
+    hasError = true;
+  } else if (!isValidEmail(email)) {
+    setEmailError("รูปแบบอีเมลไม่ถูกต้อง");
     hasError = true;
   }
 
@@ -59,9 +65,19 @@ const handleRegister = async () => {
     );
 
     if (!res.ok) {
-      setConfirmPasswordError("ไม่สามารถลงทะเบียนได้ กรุณาลองใหม่อีกครั้ง");
-      return;
-    }
+  const data = await res.json();
+
+  // map error ตาม message จาก backend
+  if (data.message.includes("อีเมล")) {
+    setEmailError(data.message);
+  } else if (data.message.includes("รหัสผ่าน")) {
+    setPasswordError(data.message);
+  } else {
+    setConfirmPasswordError(data.message || "ไม่สามารถลงทะเบียนได้");
+  }
+  return;
+}
+
 
     setShowSuccess(true);
   } catch (error) {
